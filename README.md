@@ -13,7 +13,9 @@ Saddly found that the compile speed difference of my project(golang) between thi
 -   In M2 Pro MBP
 
     ```shell
-    # waiting to be filled
+    $ /usr/bin/time -h make all
+    ...
+            37.17s real             3m46.23s user           39.77s sys
     ```
 
 ## Hardwares
