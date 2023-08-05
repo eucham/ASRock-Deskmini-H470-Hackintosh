@@ -22,7 +22,7 @@ Saddly found that the compile speed difference of my project(golang) between thi
 
 | Item                   | Detail                        |
 | ---------------------- | ----------------------------- |
-| Motherboard            | ASRock H470                   |
+| Motherboard            | ASRock Deskmini H470          |
 | CPU                    | i5-10500                      |
 | iGPU                   | UHD 630                       |
 | WiFi & Blutooth（M.2） | BCM94360CS2                   |
