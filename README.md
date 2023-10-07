@@ -32,8 +32,49 @@ Saddly found that the compile speed difference of my project(golang) between thi
 
 ## Current Version
 
--   OpenCore 0.9.3
+-   OpenCore 0.9.5
+-   macOS Sonoma 14.0
+
+Old macOS Versions:
 -   macOS Ventura 13.5
+
+## About upgrading to macOS Sonoma 14.0
+No native support for BCM94360CS2, need to add some kexts and make some configurations. Links below may helps!
+
+- [Sonoma 常遇到的問題（保持更新）](https://www.imacpc.net/archives/5324)
+- [Hackintosh tutorial - Broadcom/Fenvi WIFI on MacOS Sonoma](https://www.youtube.com/watch?v=zHx2UIUsFuA)
+- [OpenCore-Legacy-Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher) Get OCLP app & related kexts here!
+
+Step summaries:
+
+1. PATH: `NVRAM` - `ADD` - `7C436110-AB2A-4BBB-A880-FE41995C9F82`
+
+- Add parameters in `boot-args`
+   - `amfi=0x80`
+   - `vsmcgen=1`
+   - `-lilubetaall`
+   - `vsmcbeta`
+- Set `csr-active-config` to `03080000`
+
+2. PATH: `NVRAM` - `DELETE` - `7C436110-AB2A-4BBB-A880-FE41995C9F82`
+
+- Add `csr-active-config`
+
+3. PATH: `MISC` - `Security` - `SecurityBootModel`
+
+- Set to `Disabled`
+
+4. `Kenel` - `Add` add `IOSkywalk.kext` & `IO80211FamilyLegacy.kext`（Min kernel version: `23.0.0`）
+
+Add 3 kexts in order. 
+
+5. `Kenel` - `Block` add `com.apple.iokit.IOSkywalkFamily` （Min kernel version: `23.0.0`）
+
+6. Reboot your hackintosh
+
+7. Download OCLP v1.0.1 and open this app, click `Post-Install Root Patch`, then `Start Root Patching`. 
+
+8. After rebooting again, WiFi works.
 
 ## Works fine
 
