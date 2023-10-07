@@ -68,7 +68,7 @@ Step summaries:
 
 Add 3 kexts in order. 
 
-5. `Kenel` - `Block` add `com.apple.iokit.IOSkywalkFamily` （Min kernel version: `23.0.0`）
+5. `Kenel` - `Block` add `com.apple.iokit.IOSkywalkFamily` （Min kernel version: `23.0.0`） Strategy -> `Exclude`
 
 6. Reboot your hackintosh
 
